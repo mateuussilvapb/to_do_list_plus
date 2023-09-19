@@ -1,0 +1,90 @@
+// ****************************** //
+@import "../../../../../dist/scss/variables.scss";
+
+// ****************************** //
+h1 {
+  margin: 0px;
+  margin-bottom: -5px;
+  border-radius: 5px;
+
+  width: 100%;
+  padding: 15px 0;
+
+  text-align: center;
+  font-size: 18px;
+  color: $secondary-text-color;
+
+  background: $tertiary-background-color;
+  background-size: 300% 300%;
+  //'colors' se refere a uma animação implementada no arquivo de variáveis
+  animation: colors 15s ease infinite;
+}
+
+// ****************************** //
+.container {
+  width: 450px;
+  margin-bottom: 20px;
+}
+// ****************************** //
+.container_2 {
+  width: 350px;
+  margin: 20px auto;
+}
+
+input {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  // border-radius: 5px;
+  width: 100%;
+
+  border: none;
+
+  font-size: 16px;
+  color: black;
+  text-align: center;
+
+  padding: 10px;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: gray;
+  }
+  background-size: 300% 300%;
+  //'colors' se refere a uma animação implementada no arquivo de variáveis
+  animation: colors 15s ease infinite;
+}
+
+.btn_remov_secao {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  align-items: center;
+  // text-align: center;
+}
+
+button {
+  display: inline-block;
+  border: none;
+  border-radius: 50px;
+  background: $danger-color;
+
+  font-size: 16px;
+  color: $secondary-text-color;
+
+  width: 60%;
+  padding: 10px;
+}
+
+.btn_limpar_secao {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  width: 35%;
+  margin-right: 0.1rem;
+}
+
+.btn_excluir_secao {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  width: 35%;
+  margin-left: 0.1rem;
+}

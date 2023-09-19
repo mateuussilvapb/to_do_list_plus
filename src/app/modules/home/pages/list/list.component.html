@@ -1,0 +1,26 @@
+<section class="container">
+  <h1>To-Do List</h1>
+  <input
+    placeholder="Informe o nome da nova seção..."
+    [(ngModel)]="sectionName"
+    (keyup.enter)="addSection()"
+  />
+</section>
+
+<section class="container_2" *ngFor="let section of sectionList; let i = index">
+  <app-todo-list
+    (emitter)="receptor($event)"
+    [section]="section"
+  ></app-todo-list>
+  <div class="btn_remov_secao" *ngIf="!section.list?.length">
+    <button (click)="deletarSecao(i)">Excluir Seção</button>
+  </div>
+  <div class="btn_remov_secao" *ngIf="section.list?.length">
+    <button (click)="limparSecao(i)" class="btn_limpar_secao">
+      Limpar Seção
+    </button>
+    <button (click)="deletarSecao(i)" class="btn_excluir_secao">
+      Excluir Seção
+    </button>
+  </div>
+</section>

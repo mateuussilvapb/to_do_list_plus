@@ -1,0 +1,31 @@
+// ****************************** //
+@import "../../../../../dist/scss/variables.scss";
+
+// ****************************** //
+:host {
+  display: flex;
+  justify-content: center;
+  margin-top: -20px;
+
+  input {
+    border-radius: 5px;
+    width: 80%;
+
+    border: none;
+    background: $tertiary-background-color;
+
+    font-size: 16px;
+    color: $secondary-text-color;
+    text-align: center;
+
+    padding: 10px;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: $secondary-text-color;
+    }
+    background-size: 300% 300%;
+    //'colors' se refere a uma animação implementada no arquivo de variáveis
+    animation: colors 15s ease infinite;
+  }
+}
