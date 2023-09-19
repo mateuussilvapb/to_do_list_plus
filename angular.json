@@ -17,6 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "baseHref": "/seu-repositorio/",
             "outputPath": "dist/app-to-do",
             "index": "src/index.html",
             "main": "src/main.ts",
