@@ -33,7 +33,7 @@ export class ListComponent {
   }
 
   public deletarSecao(index: number) {
-    const confirm = window.confirm('Você deseja realmente limpar a seção?');
+    const confirm = window.confirm('Você deseja realmente excluir a seção?');
     if (confirm) {
       this.sectionList.splice(index, 1);
       this.sectionList.sort();
