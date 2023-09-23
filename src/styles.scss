@@ -3,7 +3,296 @@
 // ****************************** //
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Press+Start+2P&family=Roboto:wght@100;300;400;700&display=swap");
 
-@import "primeicons/primeicons.css";
+// Exemplo de media query para tela pequena (até 768px)
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    margin: 50px auto;
+    margin-bottom: 10px;
+    width: 90%;
+    h1 {
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+
+      width: 100%;
+      padding: 15px 0;
+      margin-bottom: 0px;
+
+      text-align: center;
+      font-size: 18px;
+      color: $secondary-text-color;
+
+      background: $tertiary-background-color;
+      background-size: 300% 300%;
+      //'colors' se refere a uma animação implementada no arquivo de variáveis
+      animation: colors 15s ease infinite;
+    }
+    input {
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      width: 100%;
+
+      border: none;
+      background: white;
+
+      font-size: 16px;
+      color: black;
+      text-align: center;
+
+      padding: 10px;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: $quaternary-text-color;
+      }
+      background-size: 300% 300%;
+      //'colors' se refere a uma animação implementada no arquivo de variáveis
+      animation: colors 15s ease infinite;
+    }
+  }
+
+  .container_2 {
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    width: 80%;
+    margin: auto;
+    h1 {
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+
+      width: 100%;
+      padding: 15px 0;
+      margin-bottom: 0px;
+
+      text-align: center;
+      font-size: 18px;
+      color: $secondary-text-color;
+
+      background: $tertiary-background-color;
+      background-size: 300% 300%;
+      //'colors' se refere a uma animação implementada no arquivo de variáveis
+      animation: colors 15s ease infinite;
+    }
+    input {
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      width: 100%;
+
+      border: none;
+      background: white;
+
+      font-size: 16px;
+      color: $secondary-text-color;
+
+      padding: 10px;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: black;
+      }
+      background-size: 300% 300%;
+      //'colors' se refere a uma animação implementada no arquivo de variáveis
+      animation: colors 15s ease infinite;
+    }
+  }
+}
+
+// Exemplo de media query para tela média (de 769px a 1024px)
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    margin: 50px auto;
+    margin-bottom: 10px;
+    width: 40%;
+    h1 {
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+
+      width: 100%;
+      padding: 15px 0;
+      margin-bottom: 0px;
+
+      text-align: center;
+      font-size: 18px;
+      color: $secondary-text-color;
+
+      background: $tertiary-background-color;
+      background-size: 300% 300%;
+      //'colors' se refere a uma animação implementada no arquivo de variáveis
+      animation: colors 15s ease infinite;
+    }
+    input {
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      width: 100%;
+
+      border: none;
+      background: white;
+
+      font-size: 16px;
+      color: black;
+      text-align: center;
+
+      padding: 10px;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: $quaternary-text-color;
+      }
+      background-size: 300% 300%;
+      //'colors' se refere a uma animação implementada no arquivo de variáveis
+      animation: colors 15s ease infinite;
+    }
+  }
+
+  .container_2 {
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    width: 35%;
+    margin: auto;
+    h1 {
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+
+      width: 100%;
+      padding: 15px 0;
+      margin-bottom: 0px;
+
+      text-align: center;
+      font-size: 18px;
+      color: $secondary-text-color;
+
+      background: $tertiary-background-color;
+      background-size: 300% 300%;
+      //'colors' se refere a uma animação implementada no arquivo de variáveis
+      animation: colors 15s ease infinite;
+    }
+    input {
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      width: 100%;
+
+      border: none;
+      background: white;
+
+      font-size: 16px;
+      color: $secondary-text-color;
+
+      padding: 10px;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: black;
+      }
+      background-size: 300% 300%;
+      //'colors' se refere a uma animação implementada no arquivo de variáveis
+      animation: colors 15s ease infinite;
+    }
+  }
+}
+
+// Exemplo de media query para tela grande (acima de 1024px)
+@media screen and (min-width: 1025px) {
+  .container {
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    margin: 50px auto;
+    margin-bottom: 10px;
+    width: 30%;
+    h1 {
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+
+      width: 100%;
+      padding: 15px 0;
+      margin-bottom: 0px;
+
+      text-align: center;
+      font-size: 18px;
+      color: $secondary-text-color;
+
+      background: $tertiary-background-color;
+      background-size: 300% 300%;
+      //'colors' se refere a uma animação implementada no arquivo de variáveis
+      animation: colors 15s ease infinite;
+    }
+    input {
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      width: 100%;
+
+      border: none;
+      background: white;
+
+      font-size: 16px;
+      color: black;
+      text-align: center;
+
+      padding: 10px;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: $quaternary-text-color;
+      }
+      background-size: 300% 300%;
+      //'colors' se refere a uma animação implementada no arquivo de variáveis
+      animation: colors 15s ease infinite;
+    }
+  }
+
+  .container_2 {
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    width: 20%;
+    margin: auto;
+    h1 {
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+
+      width: 100%;
+      padding: 15px 0;
+      margin-bottom: 0px;
+
+      text-align: center;
+      font-size: 18px;
+      color: $secondary-text-color;
+
+      background: $tertiary-background-color;
+      background-size: 300% 300%;
+      //'colors' se refere a uma animação implementada no arquivo de variáveis
+      animation: colors 15s ease infinite;
+    }
+    input {
+      border-bottom-right-radius: 5px;
+      border-bottom-left-radius: 5px;
+      width: 100%;
+
+      border: none;
+      background: white;
+
+      font-size: 16px;
+      color: $secondary-text-color;
+
+      padding: 10px;
+      box-sizing: border-box;
+
+      &::placeholder {
+        color: black;
+      }
+      background-size: 300% 300%;
+      //'colors' se refere a uma animação implementada no arquivo de variáveis
+      animation: colors 15s ease infinite;
+    }
+  }
+}
 
 // ****************************** //
 * {
@@ -34,12 +323,3 @@ button {
 button {
   cursor: pointer;
 }
-
-// ****************************** //
-.container {
-  width: 350px;
-  margin: 50px auto;
-}
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

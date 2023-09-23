@@ -1,5 +1,5 @@
 <app-header [sectionName]="section.section"></app-header>
-<section [ngClass]="{ loading: !section.list?.length }">
+<section [ngClass]="{'loading': !section.list?.length }">
   <ul *ngIf="section.list?.length">
     <li *ngFor="let item of section.list; let i = index">
       <input type="checkbox" [(ngModel)]="item.checked" />
@@ -11,7 +11,7 @@
       />
       <button (click)="deleteItemTaskList(i)">
         <img
-          style="width: 120%"
+          style="width: 150%"
           src="../../../../../assets/icons/icon-trash.svg"
           alt=""
         />
