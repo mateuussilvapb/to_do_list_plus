@@ -37,3 +37,12 @@ button {
   font-size: 15px;
   margin-left: 0.1rem;
 }
+
+@media screen and (max-width: 768px) {
+  .btn_limpar_secao {
+    font-size: 12px !important;
+  }
+  .btn_excluir_secao {
+    font-size: 12px !important;
+  }
+}
