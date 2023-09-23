@@ -97,6 +97,10 @@
       //'colors' se refere a uma animação implementada no arquivo de variáveis
       animation: colors 15s ease infinite;
     }
+
+    button {
+      font-size: 12px !important;
+    }
   }
 }
 
@@ -193,10 +197,6 @@
       background-size: 300% 300%;
       //'colors' se refere a uma animação implementada no arquivo de variáveis
       animation: colors 15s ease infinite;
-    }
-
-    button {
-      font-size: 12px !important;
     }
   }
 }
