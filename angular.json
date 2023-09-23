@@ -102,8 +102,11 @@
           }
         },
         "gh-pages": {
-          "baseHref": "/to_do_list_plus/",
-          "dir": "dist/app-to-do"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "/to_do_list_plus/",
+            "dir": "dist/app-to-do"
+          }
         }
       }
     }
