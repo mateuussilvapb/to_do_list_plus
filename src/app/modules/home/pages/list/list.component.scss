@@ -9,11 +9,37 @@
   // text-align: center;
 }
 
+.input-section {
+  width: 100%;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  padding: 0px;
+}
+
+.btn-section {
+  min-height: 100%;
+  margin: 0px !important;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 5px;
+  width: 13% !important;
+  padding: 0px;
+  font-size: 32px;
+  background-color: #198754 !important;
+  background: linear-gradient(to left, transparent 80%, rgba(255, 255, 255, 1));
+}
+
+.container-add-section {
+  display: flex;
+  flex-direction: row;
+}
+
 button {
   display: inline-block;
   border: none;
   border-radius: 50px;
-  background: $danger-color;
+  background-color: $danger-color;
 
   font-size: 15px;
   color: $secondary-text-color;

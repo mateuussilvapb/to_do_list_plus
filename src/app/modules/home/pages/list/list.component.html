@@ -1,10 +1,14 @@
 <section class="container">
   <h1>To-Do List</h1>
-  <input
-    placeholder="Informe o nome da nova seção..."
-    [(ngModel)]="sectionName"
-    (keyup.enter)="addSection()"
-  />
+  <div class="container-add-section row">
+    <input
+      placeholder="Informe a nova seção..."
+      [(ngModel)]="sectionName"
+      (keyup.enter)="addSection()"
+      class="input-section"
+    />
+    <button (click)="addSection()" class="btn btn-section">+</button>
+  </div>
 </section>
 
 <section class="container_2" *ngFor="let section of sectionList; let i = index">
