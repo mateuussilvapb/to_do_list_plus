@@ -1,5 +1,7 @@
 import { Component, DoCheck, EventEmitter, Input, Output } from '@angular/core';
 import { SectionList } from 'src/app/services/shared/models/section-list';
+import { Task } from 'src/app/services/shared/models/task';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-todo-list',
@@ -29,7 +31,23 @@ export class TodoListComponent implements DoCheck {
 
   public setEmittTaskList(event: string) {
     if (event != '') {
-      this.section.list?.push({ task: event, checked: false });
+      let contains = false;
+      this.section.list?.forEach((item: Task) => {
+        if (item.task === event) {
+          contains = true;
+        }
+      });
+      if (contains) {
+        Swal.fire({
+          icon: 'warning',
+          title: 'Atenção!',
+          text: 'O item informado já está presente na lista.',
+          width: 400,
+        });
+        return;
+      } else {
+        this.section.list?.push({ task: event, checked: false });
+      }
     }
   }
 
