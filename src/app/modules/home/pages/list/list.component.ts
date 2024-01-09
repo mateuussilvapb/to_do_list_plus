@@ -59,6 +59,7 @@ export class ListComponent {
           icon: 'error',
           title: 'Oops...',
           text: "O arquivo selecionado precisa ser do tipo '.json'",
+          width: 300,
         });
       } else {
         const reader = new FileReader();
@@ -67,6 +68,7 @@ export class ListComponent {
           const dadosLocalStorage = JSON.parse(
             localStorage.getItem('listSections') || ''
           );
+          console.log(dadosLocalStorage);
           if (dadosLocalStorage.length == 0) {
             localStorage.setItem(
               'listSections',
@@ -75,6 +77,39 @@ export class ListComponent {
             this.sectionList = JSON.parse(
               localStorage.getItem('listSections') || '[]'
             );
+          } else {
+            Swal.fire({
+              title: 'Atenção!',
+              text: 'Já existem dados no seu armazenamento local. Você deseja compor as informações a lista já existente ou deseja substituí-las?',
+              icon: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'Compor!',
+              cancelButtonText: 'Substituir!',
+              width: 300,
+            }).then((result) => {
+              if (result.isConfirmed) {
+                const arrayAuxiliar: Array<SectionList> = [
+                  ...dadosImportados,
+                  ...this.sectionList,
+                ];
+                this.sectionList = arrayAuxiliar;
+                this.sectionList.sort();
+                localStorage.setItem(
+                  'listSections',
+                  JSON.stringify(this.sectionList)
+                );
+              } else {
+                localStorage.setItem(
+                  'listSections',
+                  JSON.stringify(dadosImportados)
+                );
+                this.sectionList = JSON.parse(
+                  localStorage.getItem('listSections') || '[]'
+                );
+              }
+            });
           }
         };
         reader.readAsText(arquivoSelecionado);
