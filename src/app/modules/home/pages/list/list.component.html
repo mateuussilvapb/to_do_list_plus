@@ -1,5 +1,30 @@
 <section class="container">
-  <h1>To-Do List</h1>
+  <div class="header-div">
+    <div style="margin-left: 1rem">
+      <i
+        (click)="exportarLista()"
+        class="pi pi-cloud-upload"
+        style="font-size: 2rem; cursor: pointer"
+      ></i>
+    </div>
+    <div class="div-title">
+      <p class="title">To-Do List</p>
+    </div>
+    <div style="margin-right: 1rem">
+      <i
+        (click)="fileInput.click(); fileInput.value = ''"
+        class="pi pi-cloud-download"
+        style="font-size: 2rem; cursor: pointer"
+      >
+        <input
+          type="file"
+          (change)="importarLista($event)"
+          style="display: none"
+          #fileInput
+        />
+      </i>
+    </div>
+  </div>
   <div class="container-add-section row">
     <input
       placeholder="Informe a nova seção..."

@@ -1,5 +1,6 @@
-import { Component, DoCheck, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { SectionList } from 'src/app/services/shared/models/section-list';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-list',
@@ -48,5 +49,57 @@ export class ListComponent {
       this.sectionList.sort();
       localStorage.setItem('listSections', JSON.stringify(this.sectionList));
     }
+  }
+
+  importarLista(event: any) {
+    const arquivoSelecionado = event.target.files[0];
+    if (arquivoSelecionado) {
+      if (arquivoSelecionado.type !== 'application/json') {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: "O arquivo selecionado precisa ser do tipo '.json'",
+        });
+      } else {
+        const reader = new FileReader();
+        reader.onload = (e: any) => {
+          const dadosImportados = JSON.parse(e.target.result);
+          const dadosLocalStorage = JSON.parse(
+            localStorage.getItem('listSections') || ''
+          );
+          if (dadosLocalStorage.length == 0) {
+            localStorage.setItem(
+              'listSections',
+              JSON.stringify(dadosImportados)
+            );
+            this.sectionList = JSON.parse(
+              localStorage.getItem('listSections') || '[]'
+            );
+          }
+        };
+        reader.readAsText(arquivoSelecionado);
+      }
+    }
+  }
+
+  public exportarLista() {
+    const dadosJSON = JSON.stringify(localStorage.getItem('listSections') || '')
+      .replace(/\\/g, '')
+      .replace(/^"|"$/g, '');
+    const blob = new Blob([dadosJSON], { type: 'application/json' });
+    const url = window.URL.createObjectURL(blob);
+
+    // Cria um elemento de âncora para fazer o download do arquivo
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'to_do_list.json';
+
+    // Adiciona o elemento de âncora ao documento e simula o clique
+    document.body.appendChild(a);
+    a.click();
+
+    // Remove o elemento de âncora depois do download
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
   }
 }

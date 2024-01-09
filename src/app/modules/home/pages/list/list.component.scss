@@ -1,6 +1,38 @@
 // ****************************** //
 @import "../../../../../dist/scss/variables.scss";
 
+.header-div {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+
+  width: 100%;
+  padding: 15px 0;
+  margin-bottom: 0px;
+
+  text-align: center;
+  font-size: 18px;
+  color: $secondary-text-color;
+
+  background: $tertiary-background-color;
+  background-size: 300% 300%;
+  //'colors' se refere a uma animação implementada no arquivo de variáveis
+  animation: colors 15s ease infinite;
+
+  display: flex !important;
+  justify-content: space-between;
+  div {
+    .title {
+      margin: 0px !important;
+    }
+  }
+}
+
+.div-title {
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .btn_remov_secao {
   display: flex;
   margin-top: 10px;
