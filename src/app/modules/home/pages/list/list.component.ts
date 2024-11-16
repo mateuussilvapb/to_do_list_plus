@@ -105,9 +105,9 @@ export class ListComponent {
           const dadosImportados: Array<SectionList> = JSON.parse(
             e.target.result
           ) as Array<SectionList>;
-          const dadosLocalStorage = JSON.parse(
-            localStorage.getItem('listSections') || ''
-          );
+          const dadosLocalStorage = localStorage.getItem('listSections')
+            ? JSON.parse(localStorage.getItem('listSections') || '')
+            : [];
           console.log(dadosLocalStorage);
           if (dadosLocalStorage.length == 0) {
             localStorage.setItem(
